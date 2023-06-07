@@ -51,6 +51,7 @@
       top: 50%;
       left: 1.25rem;
       transform: translateY(-50%);
+      @include flex(center, center);
     }
   }
 

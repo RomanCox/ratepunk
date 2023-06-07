@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-
 import {useCopyText} from '../../../hooks/useCopyText.ts';
 
-import success from '../../../assets/success.svg';
+import {SuccessIcon} from '../../../assets/successIcon.tsx';
 
 import s from './referalLink.module.scss';
+
 
 export const ReferralLink: React.FC = () => {
 	const [moveLift, setMoveLift] = useState<boolean>(false);
@@ -23,7 +23,7 @@ export const ReferralLink: React.FC = () => {
 	return (
 		<div className={s.referralLinkContainer}>
 			<div className={s.successContainer}>
-				<img src={success} alt='Confirmed icon'/>
+				<SuccessIcon/>
 				<div className={s.textContainer}>
 					<div className={moveLift ? `${s.textLiftDown} ${s.textLiftUp}` : s.textLiftDown}>
 						<span>Your referral link is copied!</span>

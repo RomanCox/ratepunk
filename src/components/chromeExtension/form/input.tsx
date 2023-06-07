@@ -1,6 +1,6 @@
 import React, {type ChangeEvent, type DetailedHTMLProps, type FocusEvent, type InputHTMLAttributes} from 'react';
 
-import emailIcon from '../../../assets/email.svg';
+import {EmailIcon} from '../../../assets/emailIcon.tsx';
 
 import s from './form.module.scss';
 
@@ -29,7 +29,9 @@ export const Input: React.FC<InputPropsType> = ({value, onChange, onBlur}) => {
 				onChange={(e) => { onChangeHandler(e); }}
 				onBlur={(e) => { onBlurHandler(e); }}
 			/>
-			<img src={emailIcon} className={s.emailIcon} alt='Email Icon'></img>
+			<div className={s.emailIcon}>
+				<EmailIcon />
+			</div>
 		</div>
 	);
 };

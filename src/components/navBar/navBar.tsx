@@ -15,16 +15,14 @@ export type NavBarPropsType = {
 export const NavBar = ({navLinks}: NavBarPropsType) => {
 	return (
 		<div className={s.navContainer}>
-			{navLinks.map(link => {
-				//const isActive = pathname === link.href
-
+			{navLinks.map(({label, href}) => {
 				return (
 					<NavLink
-						key={link.label}
-						to={link.href}
+						key={label}
+						to={href}
 						className={({isActive}) => isActive ? `${s.linkActive} ${s.link}` : s.link}
 					>
-						{link.label}
+						{label}
 					</NavLink>
 				)
 			})}
