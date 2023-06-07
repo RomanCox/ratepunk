@@ -1,0 +1,36 @@
+@import '../../common/styles/sass/variables';
+@import '../../common/styles/sass/mixins';
+@import '../../common/styles/sass/extends';
+
+.mainWrapper {
+  width: 100%;
+  min-height: 50vh;
+  margin: 5rem 0 32rem;
+  @include flex(center, flex-start);
+  @extend %borders;
+
+  @media screen and (max-width: 72rem) {
+    margin: 5rem 0 54.75rem;
+  }
+
+  @media screen and (max-width: 42rem) {
+    margin: 5rem 0 79.125rem;
+  }
+
+  .mainContainer {
+    @include container(4rem 1rem);
+    @include flex(space-between, center, 8rem);
+
+    @media screen and (max-width: 72rem) {
+      width: 100%;
+      padding: 2rem 1rem;
+      @include flex(flex-start, center, 3rem);
+      flex-direction: column;
+    }
+
+    .title {
+      @include text($titleFontFamily, 3rem);
+    }
+  }
+}
+

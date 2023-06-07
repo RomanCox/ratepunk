@@ -1,0 +1,27 @@
+@import './variables.scss';
+
+@mixin text($fontFamily, $fontSize, $fontWeight: 400, $lineHeight: 150%, $letterSpacing: normal, $color: $primaryColor) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+  letter-spacing: $letterSpacing;
+  color: $color;
+}
+
+@mixin flex($justifyContent, $alignItems, $gap: 0) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+  gap: $gap;
+}
+
+@mixin border($width, $style, $color: $primaryColor, $radius: 0) {
+  border: $width $style $color;
+  border-radius: $radius;
+}
+
+@mixin container($padding, $width: 72rem) {
+  width: $width;
+  padding: $padding; //0 1rem;
+}

@@ -1,0 +1,148 @@
+@import '../../common/styles/sass/variables';
+@import '../../common/styles/sass/mixins';
+@import '../../common/styles/sass/extends';
+
+.mainWrapper {
+  width: 100%;
+  margin: 5rem 0 32rem;
+  @include flex(center, flex-start);
+  @extend %borders;
+
+  @media screen and (max-width: 72rem) {
+    margin: 5rem 0 54.75rem;
+  }
+
+  @media screen and (max-width: 42rem) {
+    margin: 5rem 0 79.125rem;
+  }
+
+  .mainContainer {
+    @include container(4rem 1rem);
+    @include flex(space-between, center, 8rem);
+
+    @media screen and (max-width: 72rem) {
+      width: 100%;
+      padding: 2rem 1rem;
+      @include flex(flex-start, center, 3rem);
+      flex-direction: column;
+    }
+
+    .inputBlock {
+      padding: 4rem;
+      @include flex(space-between, flex-start, 9.5rem);
+      flex-direction: column;
+      @include border(1px, solid, $primaryColor, 1rem);
+      background: $almostWhite;
+
+      @media screen and (max-width: 72rem) {
+        width: 40rem;
+        padding: 4rem 7rem;
+      }
+
+      @media screen and (max-width: 42rem) {
+        width: auto;
+        padding: 4rem;
+      }
+
+      @media screen and (max-width: 577px) {
+        padding: 2rem 1rem;
+        gap: 4.5rem;
+      }
+
+      .contentContainer {
+        @include flex(flex-start, flex-start, 2rem);
+        flex-direction: column;
+
+        @media screen and (max-width: 577px) {
+          gap: 1.5rem;
+        }
+
+        .title {
+          max-width: 26rem;
+          margin: 0;
+          @include text($titleFontFamily, 3rem);
+          white-space: pre-wrap;
+          text-transform: uppercase;
+
+          @media screen and (max-width: 577px) {
+            max-width: 19.25rem;
+            font-size: 2rem;
+          }
+        }
+
+        .description {
+          max-width: 26rem;
+          @include text($textFontFamily, 1.25rem, 400, 160%);
+          white-space: pre-wrap;
+
+          @media screen and (max-width: 577px) {
+            max-width: 19.25rem;
+            @include text($textFontFamily, 1rem);
+          }
+        }
+      }
+
+      .warningText {
+        @include text($textFontFamily, 1rem, 400, 120%, normal, $lightGreyColor);
+      }
+    }
+
+    .descriptionBlock {
+      @include flex(space-between, flex-start, 4rem);
+      flex-direction: column;
+
+      @media screen and (max-width: 577px) {
+        @include flex(space-between, center, 3rem);
+      }
+
+      .step {
+        @include flex(space-between, center, 4rem);
+
+        @media screen and (max-width: 577px) {
+          @include flex(space-between, center, 1rem);
+          flex-direction: column;
+        }
+
+        .stepDescriptionContainer {
+          @include flex(flex-start, flex-start, 1rem);
+          flex-direction: column;
+
+          @media screen and (max-width: 577px) {
+            align-items: center;
+          }
+
+          .stepNumber {
+            margin: 0;
+            @include text($textFontFamily, 1.25rem, 600, 150%, 1.6px, $secondaryColor);
+
+            @media screen and (max-width: 577px) {
+              font-size: 1rem;
+            }
+          }
+
+          .stepTitle {
+            margin: 0;
+            @include text($titleFontFamily, 2rem);
+
+            @media screen and (max-width: 577px) {
+              line-height: 125%;
+            }
+          }
+
+          .stepDescription {
+            width: 16rem;
+            margin: 0;
+            @include text($textFontFamily, 1.25rem, 400, 150%, 0);
+
+            @media screen and (max-width: 577px) {
+              width: 100%;
+              font-size: 1rem;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

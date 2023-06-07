@@ -1,0 +1,20 @@
+@import '../../common/styles/sass/variables';
+@import '../../common/styles/sass/mixins';
+@import '../../common/styles/sass/extends';
+
+.navContainer {
+  @include flex(flex-start, center, 3.25rem);
+
+  @media screen and (max-width: 72rem) {
+    @include flex(flex-start, flex-start, 0.5rem);
+    flex-direction: column;
+  }
+
+  .link {
+    @include text($textFontFamily, 1.25rem, 400, 2.5rem);
+  }
+
+  .linkActive {
+    color: $secondaryColor;
+  }
+}

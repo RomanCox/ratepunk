@@ -1,0 +1,37 @@
+@import '../../common/styles/sass/variables';
+@import '../../common/styles/sass/mixins';
+@import '../../common/styles/sass/extends';
+
+.headerWrapper {
+  width: 100%;
+  height: 5rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  @include flex(center, center);
+  background: $whiteColor;
+
+  .headerContainer {
+    @include container(0 1rem);
+    @include flex(space-between, center);
+
+    @media screen and (max-width: 72rem) {
+      width: 40rem;
+    }
+
+    @media screen and (max-width: 42rem) {
+      width: 100%;
+    }
+
+    .navContainer {
+      @include flex(flex-start, center, 3.25rem);
+
+      .link {
+        @include text($textFontFamily, 1.25rem);
+      }
+    }
+  }
+}
+

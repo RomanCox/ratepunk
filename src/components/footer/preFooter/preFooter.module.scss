@@ -1,0 +1,68 @@
+@import '../../../common/styles/sass/variables';
+@import '../../../common/styles/sass/mixins';
+@import '../../../common/styles/sass/extends';
+
+.preFooterWrapper {
+  width: 100%;
+  @include flex(center, center);
+  background: $greyColor;
+
+  .preFooterContainer {
+    @include container(2rem 1rem);
+    @include flex(flex-start, center, 2rem);
+
+    @media screen and (max-width: 72rem) {
+      padding: 2rem 1rem;
+      @include flex(flex-start, center, 3rem);
+      flex-direction: column;
+    }
+
+    .storeLinksContainer {
+      @include flex(flex-start, center, 1rem);
+
+      @media screen and (max-width: 42rem) {
+        @include flex(flex-start, center, 1rem);
+        flex-direction: column;
+      }
+
+      .storeLink {
+        width: 19.5rem;
+        padding: 1rem 1.5rem;
+        @include border(1px, solid, $primaryColor, 1rem);
+        @include flex(flex-start, center, 1rem);
+
+        .storeTextsContainer {
+          @include flex(flex-start, flex-start, 1rem);
+          flex-direction: column;
+
+          .text {
+            margin: 0;
+            @include text($textFontFamily, 1rem, 400, 100%, normal, $almostWhite);
+          }
+
+          .boldText {
+            margin: 0;
+            @include text($textFontFamily, 1.25rem, 600, 100%, normal, $almostWhite);
+          }
+        }
+      }
+    }
+
+    .ratingContainer {
+      @include flex(flex-start, center, 1rem);
+
+      .starsContainer {
+        @include flex(flex-start, center, 0.25rem);
+      }
+
+      .ratingText {
+        @include text($textFontFamily, 1.25rem, 400, 150%, normal, $whiteColor);
+
+        @media screen and (max-width: 42rem) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+

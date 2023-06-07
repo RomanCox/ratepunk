@@ -1,0 +1,133 @@
+@import '../../common/styles/sass/variables';
+@import '../../common/styles/sass/mixins';
+@import '../../common/styles/sass/extends';
+
+.footerWrapper {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  @extend %borders;
+  @include flex(center, center);
+  flex-direction: column;
+  background: $almostWhite;
+
+  .footerContainer {
+    @include container(4rem 1rem 3.625rem);
+    @include flex(flex-start, center, 8rem);
+
+    @media screen and (max-width: 72rem) {
+      @include container(3rem 2rem, 100%);
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    @media screen and (max-width: 42rem) {
+      align-items: flex-start;
+    }
+
+    .descriptionContainer {
+      @include flex(flex-start, flex-start, 2rem);
+      flex-direction: column;
+
+      .description {
+        max-width: 34rem;
+        margin: 0;
+        @include text($textFontFamily, 1rem);
+
+        @media screen and (max-width: 42rem) {
+          max-width: 19.5rem;
+        }
+      }
+
+      .copyright {
+        margin: 0.875rem 0 0 0;
+        @include text($textFontFamily, 1rem, 400, 150%, normal, $lightGreyColor);
+      }
+    }
+
+    .navContainer {
+      @include flex(flex-start, flex-start, 6.5rem);
+
+      @media screen and (max-width: 72rem) {
+        gap: 12rem;
+      }
+
+      @media screen and (max-width: 42rem) {
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .quickLinksContainer {
+        @include flex(flex-start, flex-start, 1.5rem);
+        flex-direction: column;
+
+        .quickLinksTitle {
+          margin: 0;
+          @include text($textFontFamily, 1.25rem, 700, 120%, 1.6px);
+          text-transform: uppercase;
+        }
+
+        .quickLinks {
+          @include flex(flex-start, flex-start, 1rem);
+          flex-direction: column;
+          @include text($textFontFamily, 1rem);
+        }
+      }
+
+      .contactLinksContainer {
+        @include flex(flex-start, flex-start, 5rem);
+        flex-direction: column;
+
+        @media screen and (max-width: 42rem) {
+          gap: 2rem;
+        }
+
+        .contactContainer {
+          @include flex(flex-start, flex-start, 1.5rem);
+          flex-direction: column;
+
+          .contactTitle {
+            margin: 0;
+            @include text($textFontFamily, 1.25rem, 700, 120%, 1.6px);
+            text-transform: uppercase;
+          }
+
+          .emailLink {
+            @include flex(flex-start, center, 1rem);
+            @include text($textFontFamily, 1rem);
+          }
+        }
+
+        .socialContainer {
+          @include flex(flex-start, flex-start, 1.5rem);
+          flex-direction: column;
+
+          .socialTitle {
+            margin: 0;
+            @include text($textFontFamily, 1.25rem, 700, 120%, 1.6px);
+            text-transform: uppercase;
+          }
+
+          .socialLinks {
+            @include flex(flex-start, center, 0.5rem);
+
+            .socialLink {
+              width: 2rem;
+              height: 2rem;
+              @include flex(center, center);
+              background: $secondaryColor;
+              @include border(1px, solid, $primaryColor, 0.5rem);
+            }
+          }
+
+        }
+      }
+    }
+
+    .mobileCopyright {
+      @include text($textFontFamily, 1rem, 400, 150%, normal, $lightGreyColor);
+    }
+  }
+}

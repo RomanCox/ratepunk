@@ -1,0 +1,57 @@
+@import './common/styles/sass/variables';
+
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+:root {
+  font-family: $titleFontFamily, $textFontFamily;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: $primaryColor;
+  background-color: $backgroundPrimaryColor;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  font-weight: 500;
+  color: $primaryColor;
+  text-decoration: inherit;
+}
+a:hover {
+  color: $secondaryColor;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
